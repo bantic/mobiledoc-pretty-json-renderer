@@ -1,0 +1,29 @@
+{
+  "name": "mobiledoc-pretty-json-renderer",
+  "version": "1.0.0",
+  "description": "A pretty-printer for mobiledoc documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/courajs/mobiledoc-pretty-json-renderer.git"
+  },
+  "keywords": [
+    "mobiledoc",
+    "renderer",
+    "json",
+    "pretty-print"
+  ],
+  "author": "Aaron Sikes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/courajs/mobiledoc-pretty-json-renderer/issues"
+  },
+  "homepage": "https://github.com/courajs/mobiledoc-pretty-json-renderer#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
