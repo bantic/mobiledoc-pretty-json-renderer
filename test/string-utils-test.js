@@ -17,6 +17,14 @@ describe('String utilities', function() {
     });
   });
 
+  describe('#oneline', function() {
+    it('separates array items with spaces', function() {
+      var markup = ['a', ['href', 'http://google.com', 'target', '_blank']];
+      var expected = '["a", ["href", "http://google.com", "target", "_blank"]]';
+      assert.equal(utils.oneline(markup), expected);
+    });
+  });
+
   describe('#multilineArray', function() {
     it('formats empty array is still only one line', function() {
       assert.equal(utils.multiLineArray([]), '[]');
