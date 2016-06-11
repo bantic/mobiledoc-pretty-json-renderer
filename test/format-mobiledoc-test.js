@@ -2,6 +2,11 @@ var assert = require('chai').assert;
 var formatMobiledoc = require('../index.js');
 
 describe('#formatMobiledoc', function() {
+  it('formats null mobiledocs', function() {
+    assert.equal(formatMobiledoc(null), 'null');
+    assert.equal(formatMobiledoc(''), '""');
+  });
+
   it('formats things in a way that is easy to read', function() {
     var doc = {
       version: "0.3.0",

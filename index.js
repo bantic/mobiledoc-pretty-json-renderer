@@ -2,7 +2,7 @@ var utils = require('./lib/utils');
 var formatters = require('./lib/formatters');
 
 module.exports = function formatMobiledoc(doc) {
-  if (!doc) {
+  if (doc == null || typeof doc === 'string') {
     return JSON.stringify(doc);
   }
   var lists = [
