@@ -7,7 +7,58 @@ describe('#formatMobiledoc', function() {
     assert.equal(formatMobiledoc(''), '""');
   });
 
-  it('formats things in a way that is easy to read', function() {
+  it('falls back to JSON.stringify for unsupported version numbers', function() {
+    const oldCard = {
+      version: '0.2.0',
+      sections: [
+        [],
+        [
+          [1, 'p', [[[], 0, 'before']]],
+          [10, 'ember-card'],
+          [1, 'p', [[[], 0, 'after']]]
+        ]
+      ]
+    };
+    const expected = 
+`{
+  "version": "0.2.0",
+  "sections": [
+    [],
+    [
+      [
+        1,
+        "p",
+        [
+          [
+            [],
+            0,
+            "before"
+          ]
+        ]
+      ],
+      [
+        10,
+        "ember-card"
+      ],
+      [
+        1,
+        "p",
+        [
+          [
+            [],
+            0,
+            "after"
+          ]
+        ]
+      ]
+    ]
+  ]
+}`;
+
+    assert.equal(formatMobiledoc(oldCard), expected);
+  });
+
+  it('formats a 0.3.0 mobiledoc', function() {
     var doc = {
       version: "0.3.0",
       markups: [
