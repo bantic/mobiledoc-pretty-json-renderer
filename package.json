@@ -1,6 +1,6 @@
 {
   "name": "mobiledoc-pretty-json-renderer",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A pretty-printer for mobiledoc documents",
   "main": "index.js",
   "scripts": {
